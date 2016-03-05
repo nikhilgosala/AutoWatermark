@@ -1,3 +1,7 @@
+__author__ = 'Nikhil Bharadwaj'
+__license__ = 'MIT License'
+__version__ = 'Python 3.5'
+
 import os
 from PIL import Image, ExifTags
 
