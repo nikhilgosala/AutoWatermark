@@ -1,3 +1,6 @@
+__author__ = "Nikhil Bharadwaj Gosala"
+__version__ = "Python 3.5"
+
 import os
 from PIL import Image, ExifTags
 
@@ -12,6 +15,7 @@ def preprocessImages(image_path, wm_path):
         image = Image.open(image_path)
     except:
         print("Please check the path of the image to be watermarked")
+        input("Press any key to exit")
         quit()
 
     for i in range(len(wm_path)):  
@@ -19,6 +23,7 @@ def preprocessImages(image_path, wm_path):
             wm[i] = Image.open(wm_path[i])
         except:
             print("Please check the path of the watermark")
+            input("Press any key to exit")
             quit()
 		
 	 #Rotate the image if it was in potrait mode. Use the EXIF tags stored by the camera in the JPEG file
@@ -107,7 +112,7 @@ if __name__ == '__main__':
     
     for imagename in images:
         #if(imagename.endswith('.jpg') or imagename.endswith('.JPG') and not imagename.startswith('w_')):
-        if not imagename.startswith('w_') and not imagename.endswith('.py'):
+        if not imagename.startswith('w_') and not imagename.endswith('.py') and not imagename.endswith('.exe') and not os.path.isdir(imagename):
             print(imagename)
             image_path = imagename
             image, wm = preprocessImages(os.path.join(path,image_path), watermark_path)
@@ -117,6 +122,9 @@ if __name__ == '__main__':
     #image_path = input("Enter the path of the image to be watermarked\n")
     #watermark_path = input("Enter the path of the watermark\n")
     #pos = input("Enter location of watermark(TL, TR, BL, BR)\n").upper()
+	
+    input("Press any key to exit")
+    quit()
     
     
     
