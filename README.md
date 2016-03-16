@@ -5,9 +5,8 @@ The script uses Python 3.5 and uses the Python Imaging Library(PIL).
 
 NOTE:
 
-auto_watermark.py applies only ONE watermark to the photo.
-
-auto_watermark_multiple.py applies more than one watermark.
+1. auto_watermark.py applies only ONE watermark to the photo.
+2. auto_watermark_multiple.py applies more than one watermark.
 
 To run the script:
 
